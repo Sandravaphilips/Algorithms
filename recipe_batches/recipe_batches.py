@@ -3,17 +3,13 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  # get the values for each dictionary
-  # compare values at the same index
-  # if recipe value is more than ingredient value, return 0
-  # get the number of multiples that can be gotten from each comparison
-  # return the min
   recipe_values = list(recipe.values())
   ingredients_values = list(ingredients.values())
   index = 0
   multiples_of_values = []
   dif_in_length = len(recipe_values) - len(ingredients_values)
   extension = [0] * dif_in_length
+  
   if dif_in_length > 0:
     ingredients_values.extend(extension)
   elif dif_in_length < 0:

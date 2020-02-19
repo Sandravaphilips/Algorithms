@@ -3,11 +3,6 @@
 import argparse
 
 def find_max_profit(prices):
-  # loop through each price from the start to end-1
-  # save that as the cost price
-  # loop through each price following it until end
-  # subtract the cost price from each selling price
-  # return the maximum value
   index = 0
   profit = []
   
@@ -18,7 +13,7 @@ def find_max_profit(prices):
     index += 1
 
   return max(profit)
-  pass
+
 
 
 if __name__ == '__main__':
