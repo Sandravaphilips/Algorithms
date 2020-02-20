@@ -3,7 +3,14 @@
 import sys
 
 def making_change(amount, denominations):
-  pass 
+  changes = [1]+[0]*amount
+
+  for i in denominations:
+    for j in range(i,amount+1):
+      changes[j] += changes[j-i]
+    
+  return changes[amount]
+  
 
 
 if __name__ == "__main__":
@@ -14,4 +21,4 @@ if __name__ == "__main__":
     amount = int(sys.argv[1])
     print("There are {ways} ways to make {amount} cents.".format(ways=making_change(amount, denominations), amount=amount))
   else:
-    print("Usage: making_change.py [amount]")
+    print(making_change(20, [1, 5, 10, 25, 50]))
